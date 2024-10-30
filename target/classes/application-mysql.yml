@@ -1,0 +1,27 @@
+# ===============================
+# = PARAMETERS
+# ===============================
+
+# https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#application-properties.core
+
+# ===============================
+# = DATA SOURCE
+# ===============================
+# UNIX or MAC
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/PETCLINIC_DB?useSSL=false&serverTimezone=UTC
+    username: root
+    password: # tu contraseña de MySQL, si tienes una (de lo contrario, déjala en blanco)
+    driver-class-name: com.mysql.cj.jdbc.Driver  # Asegúrate de tener este driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update  # Ajusta el esquema de la base de datos según las entidades de JPA
+    show-sql: true  # Opcional, para ver las consultas SQL en la consola
+    properties:
+      hibernate:
+        format_sql: true  # Formatea el SQL para que sea legible
+
+server:
+  port: 8080  # Puerto del servidor (puedes cambiarlo si es necesario)
